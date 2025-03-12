@@ -69,6 +69,7 @@ int main()
     bool ganhou = false;
     bool perdeu = false;
     bool jogar_novamente = false;
+    bool mudou_dificuldade = false;
 
     bool pag_inicial = true;
     bool pag_jogo = false;
@@ -126,6 +127,16 @@ int main()
                     ganhou = false;
                     perdeu = false;
                     jogar_novamente = false;
+                }
+            }
+
+            if (pag_inicial) {
+                if (mudou_dificuldade) {
+                    inicializar_fila(&resposta.letras, numero_letras_palavra_certa);
+
+                    escolher_palavra_aleatoria(&resposta, numero_letras_palavra_certa);
+
+                    mudou_dificuldade = false;
                 }
             }
 
@@ -202,21 +213,25 @@ int main()
 
                     if (x_mouse >= 215 && x_mouse <= 505 && y_mouse >= 380 && y_mouse <= 560) {
                         numero_letras_palavra_certa = 5;
+                        mudou_dificuldade = true;
                         pag_dificuldade = false;
                     }
 
                     if (x_mouse >= 755 && x_mouse <= 1045 && y_mouse >= 380 && y_mouse <= 560) {
                         numero_letras_palavra_certa = 6;
+                        mudou_dificuldade = true;
                         pag_dificuldade = false;
                     }
 
                     if (x_mouse >= 215 && x_mouse <= 505 && y_mouse >= 600 && y_mouse <= 780) {
                         numero_letras_palavra_certa = 7;
+                        mudou_dificuldade = true;
                         pag_dificuldade = false;
                     }
 
                     if (x_mouse >= 755 && x_mouse <= 1045 && y_mouse >= 600 && y_mouse <= 780) {
                         numero_letras_palavra_certa = 8;
+                        mudou_dificuldade = true;
                         pag_dificuldade = false;
                     }
 
@@ -379,7 +394,7 @@ int main()
                             }
 
                             if (cor_bolinhas[0][j] == 2) {
-                                al_draw_filled_circle(470 + i, 135, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 135, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[0][j] == 3) {
@@ -421,7 +436,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(470 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -440,7 +455,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(470 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -463,7 +478,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(470 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -482,7 +497,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(470 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -505,7 +520,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(470 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -524,7 +539,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(470 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -548,7 +563,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(470 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -567,7 +582,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(470 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -590,7 +605,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(470 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -609,7 +624,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(470 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(470 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -637,7 +652,7 @@ int main()
                             }
 
                             if (cor_bolinhas[0][j] == 2) {
-                                al_draw_filled_circle(422 + i, 135, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 135, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[0][j] == 3) {
@@ -656,7 +671,7 @@ int main()
                             }
 
                             if (cor_bolinhas[0][j] == 2) {
-                                al_draw_filled_circle(422 + i, 135, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 135, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[0][j] == 3) {
@@ -680,7 +695,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(422 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -699,7 +714,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(422 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -723,7 +738,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(422 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -742,7 +757,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(422 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -766,7 +781,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(422 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -785,7 +800,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(422 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -809,7 +824,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(422 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -828,7 +843,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(422 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -852,7 +867,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(422 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -871,7 +886,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(422 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(422 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -898,7 +913,7 @@ int main()
                             }
 
                             if (cor_bolinhas[0][j] == 2) {
-                                al_draw_filled_circle(385 + i, 135, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 135, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[0][j] == 3) {
@@ -917,7 +932,7 @@ int main()
                             }
 
                             if (cor_bolinhas[0][j] == 2) {
-                                al_draw_filled_circle(385 + i, 135, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 135, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[0][j] == 3) {
@@ -941,7 +956,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(385 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -960,7 +975,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(385 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -984,7 +999,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(385 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -1003,7 +1018,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(385 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -1027,7 +1042,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(385 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -1046,7 +1061,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(385 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -1070,7 +1085,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(385 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -1089,7 +1104,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(385 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -1113,7 +1128,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(385 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -1132,7 +1147,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(385 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(385 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -1144,11 +1159,6 @@ int main()
 
                 }
                 else if (numero_letras_palavra_certa == 8) {
-                    /*for (int i = 0; i < 596; i = i + 85) {
-                        for (int j = 0; j < 426; j = j + 85) {
-                            al_draw_filled_circle(342 + i, 135 + j, 35, al_map_rgba_f(0, 0, 0.9, 0.9));
-                        }
-                    }*/
 
 
                     if ((contador_palavra - 1) == 1) {
@@ -1166,7 +1176,7 @@ int main()
                             }
 
                             if (cor_bolinhas[0][j] == 2) {
-                                al_draw_filled_circle(342 + i, 135, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 135, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[0][j] == 3) {
@@ -1185,7 +1195,7 @@ int main()
                             }
 
                             if (cor_bolinhas[0][j] == 2) {
-                                al_draw_filled_circle(342 + i, 135, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 135, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[0][j] == 3) {
@@ -1209,7 +1219,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(342 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -1228,7 +1238,7 @@ int main()
                             }
 
                             if (cor_bolinhas[1][j] == 2) {
-                                al_draw_filled_circle(342 + i, 220, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 220, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[1][j] == 3) {
@@ -1252,7 +1262,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(342 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -1271,7 +1281,7 @@ int main()
                             }
 
                             if (cor_bolinhas[2][j] == 2) {
-                                al_draw_filled_circle(342 + i, 305, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 305, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[2][j] == 3) {
@@ -1295,7 +1305,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(342 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -1314,7 +1324,7 @@ int main()
                             }
 
                             if (cor_bolinhas[3][j] == 2) {
-                                al_draw_filled_circle(342 + i, 390, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 390, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[3][j] == 3) {
@@ -1338,7 +1348,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(342 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -1357,7 +1367,7 @@ int main()
                             }
 
                             if (cor_bolinhas[4][j] == 2) {
-                                al_draw_filled_circle(342 + i, 475, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 475, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[4][j] == 3) {
@@ -1381,7 +1391,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(342 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -1400,7 +1410,7 @@ int main()
                             }
 
                             if (cor_bolinhas[5][j] == 2) {
-                                al_draw_filled_circle(342 + i, 560, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));  //amarelo
+                                al_draw_filled_circle(342 + i, 560, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));  //amarelo
                             }
 
                             if (cor_bolinhas[5][j] == 3) {
@@ -1423,7 +1433,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == 0 && alfabeto_bolas[16] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == 0 && alfabeto_bolas[16] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1437,7 +1447,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 1) && alfabeto_bolas[22] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 1) && alfabeto_bolas[22] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1451,7 +1461,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 2) && alfabeto_bolas[4] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 2) && alfabeto_bolas[4] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1465,7 +1475,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 3) && alfabeto_bolas[17] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 3) && alfabeto_bolas[17] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1479,7 +1489,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 4) && alfabeto_bolas[19] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 4) && alfabeto_bolas[19] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1493,7 +1503,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 5) && alfabeto_bolas[24] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 5) && alfabeto_bolas[24] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1507,7 +1517,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 6) && alfabeto_bolas[20] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 6) && alfabeto_bolas[20] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1521,7 +1531,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 7) && alfabeto_bolas[8] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 7) && alfabeto_bolas[8] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1535,7 +1545,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 8) && alfabeto_bolas[14] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 8) && alfabeto_bolas[14] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1549,7 +1559,7 @@ int main()
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 9) && alfabeto_bolas[15] == 2) {
-                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 9) && alfabeto_bolas[15] == 3) {
                         al_draw_filled_circle(265 + i, 700, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1569,7 +1579,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 0) && alfabeto_bolas[0] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 0) && alfabeto_bolas[0] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1583,7 +1593,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 1) && alfabeto_bolas[18] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 1) && alfabeto_bolas[18] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1597,7 +1607,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 2) && alfabeto_bolas[3] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 2) && alfabeto_bolas[3] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1611,7 +1621,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 3) && alfabeto_bolas[5] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 3) && alfabeto_bolas[5] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1625,7 +1635,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 4) && alfabeto_bolas[6] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 4) && alfabeto_bolas[6] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1639,7 +1649,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 5) && alfabeto_bolas[7] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 5) && alfabeto_bolas[7] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1653,7 +1663,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 6) && alfabeto_bolas[9] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 6) && alfabeto_bolas[9] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1667,7 +1677,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 7) && alfabeto_bolas[10] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 7) && alfabeto_bolas[10] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1681,7 +1691,7 @@ int main()
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 8) && alfabeto_bolas[11] == 2) {
-                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 8) && alfabeto_bolas[11] == 3) {
                         al_draw_filled_circle(230 + i, 785, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1700,7 +1710,7 @@ int main()
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 0) && alfabeto_bolas[25] == 2) {
-                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 0) && alfabeto_bolas[25] == 3) {
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1714,7 +1724,7 @@ int main()
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 1) && alfabeto_bolas[23] == 2) {
-                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 1) && alfabeto_bolas[23] == 3) {
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1728,7 +1738,7 @@ int main()
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 2) && alfabeto_bolas[2] == 2) {
-                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 2) && alfabeto_bolas[2] == 3) {
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1742,7 +1752,7 @@ int main()
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 3) && alfabeto_bolas[21] == 2) {
-                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 3) && alfabeto_bolas[21] == 3) {
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1756,7 +1766,7 @@ int main()
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 4) && alfabeto_bolas[1] == 2) {
-                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 4) && alfabeto_bolas[1] == 3) {
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1770,7 +1780,7 @@ int main()
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 5) && alfabeto_bolas[13] == 2) {
-                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 5) && alfabeto_bolas[13] == 3) {
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
@@ -1784,7 +1794,7 @@ int main()
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0, 0, 0.9));
                     }
                     else if (i == (85 * 6) && alfabeto_bolas[12] == 2) {
-                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.9, 0, 0.9));
+                        al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0.9, 0.8, 0, 0.9));
                     }
                     else if (i == (85 * 6) && alfabeto_bolas[12] == 3) {
                         al_draw_filled_circle(265 + i, 870, 35, al_map_rgba_f(0, 0.9, 0, 0.9));
